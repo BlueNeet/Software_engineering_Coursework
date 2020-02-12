@@ -60,7 +60,6 @@ def printo(charr):
             print(tekst)
         else:
             print("未初始化该量")
-            return error
 
 def firstrslt(ze):
     if ze[1]=="看看":
@@ -138,6 +137,7 @@ def ChParser():
             strings[charr[0]]=strings[charr[0]]+change
         elif charr[1]=="减少" and change!="errorx":
             strings[charr[0]]=strings[charr[0]]-change
+
     elif charr[1]=="乘以" or charr[1]=="除以":
         change=chtoint(charr[2])
         if charr[1]=="乘以":
@@ -147,6 +147,7 @@ def ChParser():
                 print("分母不可为零")
             else:
                 strings[charr[0]]=strings[charr[0]]/change
+
     elif charr[0]=="如果" and charr[2]=="大于":
         kuchi=text.split("则",1)
         sentence=kuchi[1].split("否则")
@@ -155,7 +156,8 @@ def ChParser():
         if strings[charr[1]]>chtoint(charr[3]):
             firstrslt(ze)
         else:
-            secrslt(fouze)             
+            secrslt(fouze)        
+            
     elif charr[0]=="如果" and charr[2]=="小于":
         kuchi=text.split("则",1)
         sentence=kuchi[1].split("否则")
@@ -165,6 +167,7 @@ def ChParser():
             firstrslt(ze)
         else:
             secrslt(fouze)
+
     elif charr[0]=="如果" and charr[2]=="等于":
         kuchi=text.split("则",1)
         sentence=kuchi[1].split("否则")
@@ -174,6 +177,7 @@ def ChParser():
             firstrslt(ze)
         else:
             secrslt(fouze)
+
     elif charr[0]=="如果" and charr[2]=="不等于":
         kuchi=text.split("则",1)
         sentence=kuchi[1].split("否则")
@@ -185,6 +189,8 @@ def ChParser():
             secrslt(fouze)
     else:
         print("无此命令!!!")
+
+   
         
 if __name__=="__main__":
     strings={}
