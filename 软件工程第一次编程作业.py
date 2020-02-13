@@ -60,6 +60,8 @@ def printo(charr):
             print(tekst)
         else:
             print("未初始化该量")
+    except IndexError:
+        print("无此命令!!!")
 
 def firstrslt(ze):
     if ze[1]=="看看":
